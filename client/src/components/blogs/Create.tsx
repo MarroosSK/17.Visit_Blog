@@ -6,7 +6,6 @@ import { MdOutlineCloudUpload } from "react-icons/md";
 //quill
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import DOMPurify from "dompurify";
 import "./Create.css";
 
 export interface BlogDataType {
@@ -29,17 +28,12 @@ const Create = () => {
 
   const postDataMutation = useMutation(
     async () => {
-      const sanitizedTitle = DOMPurify.sanitize(blogData.title);
-      const sanitizedText = DOMPurify.sanitize(blogData.text);
-      const sanitizedAuthor = DOMPurify.sanitize(blogData.author);
-      const sanitizedCategory = DOMPurify.sanitize(blogData.category);
-
       const formData = new FormData();
 
-      formData.append("title", sanitizedTitle);
-      formData.append("text", sanitizedText);
-      formData.append("author", sanitizedAuthor);
-      formData.append("category", sanitizedCategory);
+      formData.append("title", blogData.title);
+      formData.append("text", blogData.text);
+      formData.append("author", blogData.author);
+      formData.append("category", blogData.category);
       if (blogData.imageUrl) {
         formData.append("image", blogData.imageUrl);
       }
