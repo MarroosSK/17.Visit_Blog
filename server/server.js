@@ -16,7 +16,6 @@ app.use(
       "https://17-visit-blog-xhqm.vercel.app",
       "https://17-visit-blog.vercel.app",
     ],
-    credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
