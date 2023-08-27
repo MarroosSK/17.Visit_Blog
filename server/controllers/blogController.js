@@ -67,6 +67,7 @@ const validCategories = [
 ];
 
 export const createBlog = async (req, res) => {
+  console.log("Create Blog Request Received");
   const { title, text, author, category } = req.body;
   console.log("Received category:", category);
 
@@ -100,6 +101,7 @@ export const createBlog = async (req, res) => {
 
     return res.status(200).json(newBlog);
   } catch (error) {
+    console.error("Error Creating Blog:", error);
     return res.status(500).json({ error: "Error while adding a new blog." });
   }
 };
