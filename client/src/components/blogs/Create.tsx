@@ -41,7 +41,7 @@ const Create = () => {
       formData.append("author", sanitizedAuthor);
       formData.append("category", sanitizedCategory);
       if (blogData.imageUrl) {
-        formData.append("image", blogData.imageUrl);
+        formData.append("imageUrl", blogData.imageUrl);
       }
       await axios.post("https://17-visit-blog-xhqm.vercel.app/blogs", formData);
     },
@@ -126,7 +126,7 @@ const Create = () => {
             <input
               type="file"
               id="file"
-              name="image"
+              name="imageUrl"
               accept="image/*"
               style={{ display: "none" }}
               onChange={handleImageChange}
