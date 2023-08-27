@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { MdOutlineCloudUpload } from "react-icons/md";
+import DOMPurify from "dompurify";
 //quill
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -26,12 +27,13 @@ const Create = () => {
     imageUrl: null,
   });
 
+  const sanitizedText = DOMPurify.sanitize(blogData.text);
   const postDataMutation = useMutation(
     async () => {
       const formData = new FormData();
 
       formData.append("title", blogData.title);
-      formData.append("text", blogData.text);
+      formData.append("text", sanitizedText);
       formData.append("author", blogData.author);
       formData.append("category", blogData.category);
       if (blogData.imageUrl) {
