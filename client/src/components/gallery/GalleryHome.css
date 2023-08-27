@@ -1,0 +1,41 @@
+.gallery__home-top {
+    margin-top: 40px;
+}
+
+.gallery__home-top h2{
+    font-size: 1-8rem;
+    line-height: 1.5; 
+    text-align: center;
+}
+
+.gallery__home-top p{
+    font-size: 1.1rem;
+    line-height: 1.5; 
+    text-align: center;
+}
+.gallery__home-bottom{
+    margin-top: 40px;
+
+}
+.gallery__home-bottom {
+    height: 360px;
+    transition: border 0.3s, transform 0.3s; 
+    cursor: pointer;
+    
+  }
+  
+.gallery__home-bottom img{
+    width: 350px;
+    height: 350px;
+}
+
+  /* RESPONSIVE */
+
+  @media only screen and (max-width: 768px) {
+    .gallery__home-bottom img{
+        width: 250px;
+        height: 250px;
+    }
+    
+   }
+

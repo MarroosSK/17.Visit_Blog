@@ -1,0 +1,25 @@
+.header__mini{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    background-color: #111111;
+    z-index: 750;
+    min-height: calc(100vh + 80px);
+    padding: 35px;
+    display: none;
+}
+
+.header__mini li{
+    color: #fff;
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 780px) {
+    .header__mini{
+        display: flex;
+    }
+   }

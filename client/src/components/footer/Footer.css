@@ -1,0 +1,130 @@
+.footer {
+    margin-top: 40px;
+    background-color: #111111;
+    padding: 90px 0;
+    background-size: 100% 100%;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.footer__wrapper{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 2.5rem;
+}
+
+.footer__logo{
+    width: 40%;
+}
+
+.footer__logo-pack{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.footer__quick-links{
+    width: 20%;
+}
+
+.footer__logo h2{
+    color: #fff;
+}
+.footer__logo p{
+    color: var(--jungle-green);
+}
+
+.small__text{
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+
+
+.copyright{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright p{
+    color: rgba(255, 255, 255, 0.573);
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.copyright__social{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.3rem;
+}
+.copyright__social li{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.copyright__social-icon:hover{
+    width: 30px;
+    height: 30px;
+    padding: 0.4rem;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .footer__logo{
+        width: 50%;
+    }
+    .footer__wrapper{
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 1.5rem !important;
+        row-gap: 1.5rem;
+    }
+
+    .footer__quick-links{
+        margin-bottom: 30px;
+    }
+
+    .footer__logo h2{
+        font-size: 1.5rem;
+    }
+ 
+  }
+@media only screen and (max-width: 576px) {
+    .footer__quick-links{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer__logo{
+        width: 47%;
+        margin-bottom: 30px;
+    }
+    .small__text{
+        display: none;
+    }
+
+    .copyright{
+        flex-direction: column;
+    }
+
+}

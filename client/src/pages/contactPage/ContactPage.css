@@ -1,0 +1,50 @@
+.contactPage-hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/mailbox.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactPage-hero h2{
+    color: var(--jungle-green);
+    text-align: center;
+    max-width: 300px;
+    font-size: 3.5rem;
+    line-height: 50px;
+    font-weight: 600;
+}
+
+.contactPage__wrapper{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border: 1px solid var(--jungle-green);
+    border-radius: 10px;
+}
+
+
+
+.contactPage__form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+}
+
+.contactPage__form input, textarea{
+    border: 1px solid var(--jungle-green);
+    padding: 0.7rem 1.5rem;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+}

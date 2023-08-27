@@ -1,0 +1,53 @@
+.recent{
+    margin-top: 40px;
+}
+
+.recent__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recent__top {
+    margin-top: 40px;
+}
+
+.recent__top h2{
+    font-size: 1.8rem;
+    line-height: 1.5; 
+    text-align: center;
+}
+
+.recent__top p{
+    font-size: 1.1rem;
+    line-height: 1.5; 
+    text-align: center;
+}
+
+.recent__bottom{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+}
+.recent__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1rem;
+    margin-top: 20px;
+}
+.recent__box img{
+    border-radius: 10px;
+}
+
+.recent__box h6{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 100;
+}

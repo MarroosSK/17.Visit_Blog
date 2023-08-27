@@ -1,0 +1,101 @@
+.hero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+  }
+  
+  .hero-pic {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/parrotBg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 400px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-video {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .hero-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 100;
+  }
+
+  
+  .hero__wrapper {
+    max-width: 750px;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1.5rem;
+  }
+  
+  .hero__wrapper h2 {
+    color: #fff;
+    font-size: 3.5rem;
+    text-wrap: balance;
+    text-align: center;
+  }
+  
+  .hero__wrapper p {
+    color: #fff;
+    font-size: 1.8rem;
+    text-wrap: balance;
+  }
+
+  /* RESPONSIVE */
+
+  @media only screen and (max-width: 768px) {
+    .hero-video{
+      display: none;
+    }
+    .hero-pic {
+      display: flex;
+      
+      }
+
+      .hero__wrapper {
+        max-width: 300px;
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        row-gap: 1.2rem;
+      }
+      
+      .hero__wrapper h2 {
+        color: #fff;
+        font-size: 2.5rem;
+      }
+      
+      .hero__wrapper p {
+        font-size: 1.2rem;
+      }
+    
+   }
+
+     /* RESPONSIVE */
+
+  @media only screen and (max-width: 425px) {
+
+      .hero__wrapper p {
+        display: none;
+      }
+    
+   }

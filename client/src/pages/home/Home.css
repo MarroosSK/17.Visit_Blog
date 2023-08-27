@@ -1,0 +1,29 @@
+.about__recent__box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about__recent__box-left{
+    width: 65%;
+}
+
+.about__recent__box-right{
+    width: 35%;
+    position: sticky;
+    top: 100px;
+    height: calc(100vh - 20px);
+    overflow: hidden;
+}
+
+  /* RESPONSIVE */
+
+  @media only screen and (max-width: 768px) {
+    .about__recent__box-left{
+        width: 100%;
+    }
+    .about__recent__box-right{
+        display: none;
+    }
+    
+   }

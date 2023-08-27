@@ -1,0 +1,91 @@
+
+.blogsPage-hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/tatra.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blogsPage-hero h2{
+    color: var(--jungle-green);
+    text-align: center;
+    max-width: 300px;
+    font-size: 3.5rem;
+    line-height: 50px;
+    font-weight: 600;
+}
+
+.blogsPage__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blogsPage__top {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blogsPage__top input, select{
+    width: 350px;
+    border: 1px solid var(--jungle-green);
+    border-radius: 10px;
+    padding: 0.7rem 1.5rem;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.blogsPage__top h2{
+    font-size: 2.5rem;
+    line-height: 1.5; 
+    text-align: center;
+}
+
+.blogsPage__top p{
+    font-size: 1.5rem;
+    line-height: 1.5; 
+    text-align: center;
+}
+
+.blogsPage__bottom{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.blogsPage__box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.blogsPage__box img{
+    border-radius: 10px;
+}
+
+ /* RESPONSIVE */
+
+ @media only screen and (max-width: 420px) {
+    .blogsPage-hero h2{
+        max-width: 250px;
+
+    }
+    .blogsPage__top input, select{
+        width: 250px;
+ 
+    }
+ }

@@ -1,0 +1,135 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+/* variables */
+:root {
+  --jungle-green: #2AAA8A;
+  --grass-green: #7CFC00;
+  --jade-green: #00A36C;
+
+    --text-clr: #161C29;
+    --body-bg1: #FCF7FA;
+    --body-bg2: #F6E9E3;
+    --font-name: "Rubik", sans-serif;
+    /* rgba(53, 29, 59, 1) */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-clr);
+    scroll-behavior: smooth;
+    background-color: var(--body-bg1);
+    font-family: var(--font-name);
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover{
+    color: var(--jungle-green);
+}
+
+
+
+.container {
+    max-width: 1140px;
+    padding: 0px 15px;
+    margin: auto;
+}
+
+.description {
+    line-height: 30px;
+    font-size: 0.9rem;
+}
+
+.btn {
+    width: 75px;
+    height: 25px;
+    background-color: var(--jungle-green);
+
+}
+.primary__btn{
+    background-color:  var(--jungle-green);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    border: 1px solid gray;
+    transition: 0.3s ease;
+}
+.secondary__btn{
+    background-color:  #fff;
+    padding: 0.8rem 1.5rem;
+    outline: none;
+    color: var(--jungle-green);
+    border: 1px solid var(--jungle-green);
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.danger__btn{
+    background-color:  #fff;
+    padding: 0.8rem 1.5rem;
+    outline: none;
+    color: rgb(222, 61, 61);
+    border: 1px solid rgb(222, 61, 61);
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.primary__btn:hover{
+    background-color: #fff;
+    color:  var(--jungle-green);
+}
+.secondary__btn:hover{
+    background-color: var(--jungle-green);
+    color:  #fff;
+}
+.danger__btn:hover{
+    background-color: rgb(222, 61, 61);
+    color:  #fff;
+}
+
+.highlight {
+    color: var(--jungle-green);
+}
+
+/* scroll top */
+
+#scrollToTopButton {
+    font-size: 24px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: var(--jungle-green);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #scrollToTopButton.active {
+    display: block;
+  }
+
+  /* RESPONSIVE */
+
+@media only screen and (max-width: 400px) {
+    h2{
+        font-size: 1.5rem;
+    }
+
+}

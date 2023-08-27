@@ -1,0 +1,201 @@
+.aboutPage-hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/selfie.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutPage-hero h2{
+    color: var(--jungle-green);
+    text-align: center;
+    max-width: 300px;
+    font-size: 3.5rem;
+    line-height: 50px;
+    font-weight: 600;
+}
+
+.aboutPage__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.aboutPage-top, .aboutPage-bottom{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.aboutPage-left{
+    background-color: var(--jade-green);
+    width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    position: sticky;
+    top: 100px;
+    height: calc(100vh - 150px);
+    overflow: hidden;
+}
+.aboutPage-left h5{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-bottom: 25px;
+}
+
+.aboutPage-left p{
+    color: #fff;
+    max-width: 400px;
+    font-size: 1rem;
+    font-weight: 100;
+    margin-bottom: 25px;
+}
+
+.aboutPage-left-social{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.3rem;
+}
+.aboutPage-left-social li{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    color: #000;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.aboutPage-left-social-icon:hover{
+    width: 30px;
+    height: 30px;
+    padding: 0.4rem;
+    border-radius: 50%;
+    transition: 0.2s ease-in-out;
+    color: #000;
+}
+
+.aboutPage-right{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+.aboutPage-right img{
+    height: 180px;
+    width: 250px;
+    border-radius: 5px;
+}
+
+
+.aboutPage-bottom-left{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+.aboutPage-bottom-left img{
+    height: 180px;
+    width: 250px;
+    border-radius: 5px;
+}
+
+.aboutPage-bottom-right{
+    width: 30%;
+    position: sticky;
+    top: 100px;
+    height: calc(100vh - 100px);
+    overflow: hidden;
+}
+.aboutPage-bottom-right h5{
+    color: var(--jungle-green);
+    font-size: 1rem;
+    font-weight: 100;
+    margin-bottom: 25px;
+}
+
+.aboutPage-bottom-right p{
+    max-width: 400px;
+    font-size: 1rem;
+    font-weight: 100;
+    margin-bottom: 25px;
+}
+
+
+     /* RESPONSIVE */
+
+     @media only screen and (max-width: 825px) {
+
+        .newsletter__bottom{
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+        .aboutPage-left{
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            position: normal;
+            height: auto;
+        }
+        .aboutPage-left h5{
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 100;
+            margin-bottom: 25px;
+        }
+        
+        .aboutPage-left p{
+            color: #fff;
+            max-width: 100%;
+            font-size: 1rem;
+            font-weight: 100;
+            margin-bottom: 25px;
+        }
+        .aboutPage-right{
+            display: none;
+        }
+      
+        .aboutPage-bottom-left{
+            display: none;
+            
+        }
+
+        .aboutPage-bottom-right{
+            width: 100%;
+            position: normal;
+            height: auto;
+        }
+        .aboutPage-bottom-right h5{
+            color: var(--jungle-green);
+            font-size: 1rem;
+            font-weight: 100;
+            margin-bottom: 25px;
+        }
+        
+        .aboutPage-bottom-right p{
+            max-width: 100%;
+            font-size: 1rem;
+            font-weight: 100;
+            margin-bottom: 25px;
+        }
+     }

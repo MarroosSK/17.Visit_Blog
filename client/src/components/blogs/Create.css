@@ -1,0 +1,148 @@
+
+.create-hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/create.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-hero h2{
+    color: var(--jungle-green);
+    text-align: center;
+    max-width: 300px;
+    font-size: 3.5rem;
+    line-height: 50px;
+    font-weight: 600;
+}
+
+.create__wrapper{
+    padding: 40px;
+    border: 1px solid var(--jungle-green);
+    border-radius: 10px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-top{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 25px;
+}
+
+.create-top input, select{
+    width: 400px;
+    border: 1px solid var(--jungle-green);
+    border-radius: 10px;
+    padding: 0.7rem 1.5rem;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.create-bottom{
+    margin-top: 60px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 25px;
+}
+
+#editor-container {
+    display: block;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-size: 1.2em;
+    margin: 0 auto;
+    width: 400px;
+  }
+  label{
+    color:var(--jungle-green);
+    font-size: 1.2rem;
+  }
+
+  .image-preview img{
+    height: 300px;
+    width: 400px;
+  }
+
+     /* RESPONSIVE */
+
+ @media only screen and (max-width:768px) {
+
+  
+    .create__wrapper{
+        padding: 15px;
+        display: flex;
+
+    }
+    
+    .create-top{
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 25px;
+    }
+    
+    .create-top input, select{
+        width: 100%;
+    }
+    
+    .create-bottom{
+        width: 100%;
+    }
+
+
+    
+      .image-preview img{
+        height: 250px;
+        width: 250px;
+      }
+    
+  }
+ @media only screen and (max-width:500px) {
+
+  
+    .create__wrapper{
+        padding: 15px;
+        display: flex;
+
+    }
+    
+    .create-top{
+        width: 100%;
+    }
+    
+    .create-top input, select{
+        width: 100%;
+    }
+    
+    .create-bottom{
+        width: 100%;
+        margin-top: 110px;
+    }
+
+    #editor-container{
+        width: 100%;
+    }
+    
+      .image-preview img{
+        height: 250px;
+        width: 250px;
+      }
+    
+  }
