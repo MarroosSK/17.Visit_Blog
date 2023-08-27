@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^5.0.0",
+    "@prisma/client": "^5.2.0",
     "body-parser": "^1.20.2",
     "cloudinary": "^1.40.0",
     "cors": "^2.8.5",
@@ -26,6 +26,6 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "prisma": "^5.0.0"
+    "prisma": "^5.2.0"
   }
 }
