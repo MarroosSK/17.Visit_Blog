@@ -10,7 +10,7 @@ const BlogPage = () => {
 
   const { data } = useQuery(["blog"], () =>
     axios
-      .get(`http://localhost:3001/blogs/${id}`, {
+      .get(`https://17-visit-blog-xhqm.vercel.app/blogs/${id}`, {
         headers: {
           "Content-Type": "application/json",
         },

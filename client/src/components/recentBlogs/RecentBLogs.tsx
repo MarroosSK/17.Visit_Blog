@@ -8,14 +8,11 @@ import { BlogTypes } from "../../types/types";
 const RecentBlogs = () => {
   const { data } = useQuery(["blogs"], () =>
     axios
-      .get(
-        "http://localhost:3001/blogs", // Previesť dáta na JSON reťazec
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      )
+      .get("https://17-visit-blog-xhqm.vercel.app/blogs", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((res) => {
         return res.data;
       })

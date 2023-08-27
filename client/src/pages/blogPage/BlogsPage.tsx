@@ -15,7 +15,7 @@ const BlogsPage = () => {
   const { data, isLoading } = useQuery(["blogs"], () =>
     axios
       .get(
-        "http://localhost:3001/blogs", // Previesť dáta na JSON reťazec
+        "https://17-visit-blog-xhqm.vercel.app/blogs", // Previesť dáta na JSON reťazec
         {
           headers: {
             "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const BlogsPage = () => {
   //delete
   const deleteMutation = useMutation(
     (postId) => {
-      return axios.delete("http://localhost:3001/blogs/" + postId);
+      return axios.delete("https://17-visit-blog-xhqm.vercel.app/blogs/" + postId);
     },
     {
       onSuccess: () => {

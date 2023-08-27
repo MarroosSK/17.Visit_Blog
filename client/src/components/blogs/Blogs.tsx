@@ -7,7 +7,7 @@ import { BlogTypes } from "../../types/types";
 const Blogs = () => {
   const { data } = useQuery(["blogs"], () =>
     axios
-      .get("http://localhost:3001/blogs", {
+      .get("https://17-visit-blog-xhqm.vercel.app/blogs", {
         headers: {
           "Content-Type": "application/json",
         },

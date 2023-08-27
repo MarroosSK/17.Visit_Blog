@@ -43,7 +43,7 @@ const Create = () => {
       if (blogData.imageUrl) {
         formData.append("image", blogData.imageUrl);
       }
-      await axios.post("http://localhost:3001/blogs", formData);
+      await axios.post("https://17-visit-blog-xhqm.vercel.app/blogs", formData);
     },
     {
       onSuccess: () => {
