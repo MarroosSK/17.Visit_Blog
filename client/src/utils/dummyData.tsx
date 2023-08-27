@@ -25,7 +25,7 @@ import australiaCat from "../assets/australiaCat.jpg";
 import europeCat from "../assets/europeCat.jpg";
 import northACat from "../assets/northAmericaCat.jpg";
 import SouthACat from "../assets/southAmerica.jpg";
-import { DestinationTypes, GalleryTypes, SocialTypes } from "../types/types";
+import { DestinationTypes, GalleryTypes } from "../types/types";
 
 export const socialIcons = [
   { icon: <FiFacebook /> },
