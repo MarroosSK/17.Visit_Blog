@@ -19,25 +19,29 @@ export interface BlogDataType {
 const Create = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const [blogData, setBlogData] = useState<BlogDataType>({
-    title: "",
-    text: "",
-    author: "",
-    category: "",
-    imageUrl: null,
-  });
+  const [title, setTitle] = useState("");
+  const [text, setText] = useState("");
+  const [author, setAuthor] = useState("");
+  const [category, setCategory] = useState("");
+  const [imageUrl, setImageUrl] = useState<File | null>(null);
 
-  const sanitizedText = DOMPurify.sanitize(blogData.text);
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setImageUrl(e.target.files[0]);
+    }
+  };
+
   const postDataMutation = useMutation(
     async () => {
+      const sanitizedText = DOMPurify.sanitize(text);
       const formData = new FormData();
 
-      formData.append("title", blogData.title);
+      formData.append("title", title);
       formData.append("text", sanitizedText);
-      formData.append("author", blogData.author);
-      formData.append("category", blogData.category);
-      if (blogData.imageUrl) {
-        formData.append("image", blogData.imageUrl);
+      formData.append("author", author);
+      formData.append("category", category);
+      if (imageUrl) {
+        formData.append("image", imageUrl);
       }
       await axios.post("https://17-visit-blog-xhqm.vercel.app/blogs", formData);
     },
@@ -49,36 +53,10 @@ const Create = () => {
     }
   );
 
-  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setBlogData({
-        ...blogData,
-        imageUrl: e.target.files[0],
-      });
-    }
-  };
-
-  const handleInputChange = (
-    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setBlogData({
-      ...blogData,
-      [name]: value,
-    });
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     postDataMutation.mutate();
-    setBlogData({
-      title: "",
-      text: "",
-      author: "",
-      category: "",
-      imageUrl: null,
-    });
   };
 
   return (
@@ -93,22 +71,22 @@ const Create = () => {
             <input
               type="text"
               name="author"
-              value={blogData.author}
-              onChange={handleInputChange}
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
             />
             <label htmlFor="title">Title</label>
             <input
               type="text"
               name="title"
-              value={blogData.title}
-              onChange={handleInputChange}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className="create-middle">
             <ReactQuill
               theme="snow"
-              value={blogData.text}
-              onChange={(value) => setBlogData({ ...blogData, text: value })}
+              value={text}
+              onChange={setText}
               placeholder="text here..."
               style={{ height: "300px" }}
               id="editor-container"
@@ -128,19 +106,16 @@ const Create = () => {
               onChange={handleImageChange}
               required
             />
-            {blogData.imageUrl && (
+            {imageUrl && (
               <div className="image-preview">
-                <img
-                  src={URL.createObjectURL(blogData.imageUrl)}
-                  alt="Image Preview"
-                />
+                <img src={URL.createObjectURL(imageUrl)} alt="Image Preview" />
               </div>
             )}
             <label htmlFor="category">Category</label>
             <select
               name="category"
-              value={blogData.category}
-              onChange={handleInputChange}
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
             >
               <option value="Africa">Africa</option>
               <option value="Asia">Asia</option>

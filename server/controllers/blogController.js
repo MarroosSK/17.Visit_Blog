@@ -69,6 +69,7 @@ const validCategories = [
 export const createBlog = async (req, res) => {
   console.log("Create Blog Request Received");
   const { title, text, author, category } = req.body;
+  console.log("Received text:", req.body.text);
   console.log("Received category:", category);
 
   if (!validCategories.includes(category)) {
