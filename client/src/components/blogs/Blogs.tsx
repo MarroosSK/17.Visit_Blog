@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import { BlogTypes } from "../../types/types";
 
 const Blogs = () => {
-  const { data } = useQuery(["blogs"], () =>
+  const { data, isLoading } = useQuery(["blogs"], () =>
     axios
       .get("https://17-visit-blog-xhqm.vercel.app/blogs", {
         headers: {
@@ -16,6 +16,21 @@ const Blogs = () => {
         return res.data;
       })
   );
+
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          margin: "auto",
+        }}
+      >
+        Loading...
+      </div>
+    );
 
   return (
     <section id="blogs" className="blogs">
