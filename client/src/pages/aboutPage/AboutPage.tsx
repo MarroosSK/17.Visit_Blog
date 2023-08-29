@@ -11,11 +11,7 @@ const AboutPage = () => {
       <div className="container">
         <div className="aboutPage__wrapper">
           <div className="aboutPage-top">
-            <div
-              className="aboutPage-left"
-              data-aos="fade-right"
-              data-aos-duration="1100"
-            >
+            <div className="aboutPage-left">
               <h5>marroos</h5>
               <p>
                 I'm marroos, the travel blogger behind this website. I started
@@ -46,7 +42,11 @@ const AboutPage = () => {
                 <img src={galleryImg.img} key={galleryImg.id} />
               ))}
             </div>
-            <div className="aboutPage-bottom-right">
+            <div
+              className="aboutPage-bottom-right"
+              data-aos="fade-right"
+              data-aos-duration="1100"
+            >
               <h5>Collabs</h5>
               <p>
                 As an experienced traveler with a modest budget and a passion
