@@ -8,9 +8,10 @@
     row-gap: 1rem;
     background-color: #111111;
     z-index: 750;
-    min-height: calc(100vh + 80px);
+    height: calc(100vh - 80px); 
     padding: 35px;
     display: none;
+    overflow-y: scroll;
 }
 
 .header__mini li{
