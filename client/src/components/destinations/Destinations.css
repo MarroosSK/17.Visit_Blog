@@ -39,6 +39,7 @@
     border-radius: 10px;
     height:250px;
      width:400px;
+     cursor: pointer;
 }
 .destinations__box h6{
     text-align: center;

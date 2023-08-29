@@ -17,6 +17,7 @@ import {
   Home,
 } from "./pages";
 import { useScrollTop } from "./hooks/useScrollTop";
+import Aos from "aos";
 
 const Layout = () => {
   const { isScrolled } = useScrollTop();
@@ -58,6 +59,9 @@ const Layout = () => {
 };
 
 function App() {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   const router = createBrowserRouter([
     {
       path: "/",

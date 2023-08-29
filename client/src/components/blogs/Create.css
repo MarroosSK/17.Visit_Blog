@@ -1,3 +1,13 @@
+label{
+    margin-top: 5px;
+}
+
+.validation-message {
+    color: rgb(151, 21, 21);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
 
 .create-hero{
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../assets/create.jpg");
@@ -21,10 +31,11 @@
 }
 
 .create__wrapper{
+    max-width: 600px;
     padding: 40px;
     border: 1px solid var(--jungle-green);
     border-radius: 10px;
-    margin-top: 40px;
+    margin: 40px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +48,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 25px;
+
 }
 
 .create-top input, select{
@@ -48,12 +59,18 @@
     outline: none;
     font-size: 1rem;
     cursor: pointer;
-    margin: 20px;
+    margin: 5px;
+}
+
+.create-middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .create-bottom{
-    margin-top: 60px;
-    width: 600px;
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,11 +78,25 @@
     row-gap: 25px;
 }
 
+.create-bottom label:nth-child(2){
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--jungle-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.create-bottom label svg{
+    font-size: 44px;
+}
+
 #editor-container {
     display: block;
     font-family: 'Open Sans', Helvetica, sans-serif;
     font-size: 1.2em;
-    margin: 0 auto;
+    margin-top: 25px;
     width: 400px;
   }
   label{
@@ -84,6 +115,7 @@
 
   
     .create__wrapper{
+        max-width: 450px;
         padding: 15px;
         display: flex;
 
@@ -133,7 +165,6 @@
     
     .create-bottom{
         width: 100%;
-        margin-top: 110px;
     }
 
     #editor-container{

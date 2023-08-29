@@ -20,7 +20,8 @@
 }
 
 .contactPage__wrapper{
-    margin-top: 40px;
+    max-width: 600px;
+    margin: 40px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,9 +43,12 @@
 }
 
 .contactPage__form input, textarea{
+    max-width: 400px;
     border: 1px solid var(--jungle-green);
+    border-radius: 10px;
     padding: 0.7rem 1.5rem;
     outline: none;
     font-size: 1rem;
     cursor: pointer;
+    margin: 5px;
 }

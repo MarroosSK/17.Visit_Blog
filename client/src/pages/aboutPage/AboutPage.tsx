@@ -11,7 +11,11 @@ const AboutPage = () => {
       <div className="container">
         <div className="aboutPage__wrapper">
           <div className="aboutPage-top">
-            <div className="aboutPage-left">
+            <div
+              className="aboutPage-left"
+              data-aos="fade-right"
+              data-aos-duration="1100"
+            >
               <h5>marroos</h5>
               <p>
                 I'm marroos, the travel blogger behind this website. I started

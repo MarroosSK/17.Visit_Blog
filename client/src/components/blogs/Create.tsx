@@ -19,6 +19,7 @@ export interface BlogDataType {
 const Create = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+  const [showValidation, setShowValidation] = useState(false);
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [author, setAuthor] = useState("");
@@ -56,6 +57,11 @@ const Create = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!author || !title || !category || !imageUrl || !text) {
+      setShowValidation(true);
+      return;
+    }
+
     postDataMutation.mutate();
   };
 
@@ -73,24 +79,35 @@ const Create = () => {
               name="author"
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
+              required
             />
+            {showValidation && !author && (
+              <p className="validation-message">Author is required.</p>
+            )}
             <label htmlFor="title">Title</label>
             <input
               type="text"
               name="title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              required
             />
+            {showValidation && !title && (
+              <p className="validation-message">Title is required.</p>
+            )}
           </div>
           <div className="create-middle">
+            <label htmlFor="text">Text</label>
             <ReactQuill
               theme="snow"
               value={text}
               onChange={setText}
               placeholder="text here..."
-              style={{ height: "300px" }}
               id="editor-container"
             />
+            {showValidation && !text && (
+              <p className="validation-message">Text is required.</p>
+            )}
           </div>
           <div className="create-bottom">
             <label>Pick Picture</label>
@@ -106,6 +123,9 @@ const Create = () => {
               onChange={handleImageChange}
               required
             />
+            {showValidation && !imageUrl && (
+              <p className="validation-message">Image is required.</p>
+            )}
             {imageUrl && (
               <div className="image-preview">
                 <img src={URL.createObjectURL(imageUrl)} alt="Image Preview" />
@@ -116,7 +136,9 @@ const Create = () => {
               name="category"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
+              required
             >
+              <option value="">-- pick --</option>
               <option value="Africa">Africa</option>
               <option value="Asia">Asia</option>
               <option value="Australia">Australia</option>
@@ -124,6 +146,9 @@ const Create = () => {
               <option value="North America">North America</option>
               <option value="South America">South America</option>
             </select>
+            {showValidation && !category && (
+              <p className="validation-message">Category is required.</p>
+            )}
           </div>
           <button
             onClick={handleSubmit}

@@ -6,13 +6,11 @@ import { SearchContext } from "../../context/searchContext";
 
 const Destinations = () => {
   const navigate = useNavigate();
-  const { categoryPicked, setCategoryPicked } = useContext(SearchContext);
+  const { setCategoryPicked } = useContext(SearchContext);
 
   const handleCategory = (cat: string) => {
     setCategoryPicked(cat);
-    if (categoryPicked.length !== 0) {
-      navigate("/blogs");
-    }
+    navigate("/blogs");
   };
   return (
     <section className="destinations">
@@ -25,7 +23,11 @@ const Destinations = () => {
             </h2>
             <p>- Blog Categories -</p>
           </div>
-          <div className="destinations__bottom">
+          <div
+            className="destinations__bottom"
+            data-aos="fade-up"
+            data-aos-duration="1100"
+          >
             {destinationsData.map((blog) => (
               <div
                 key={blog.id}

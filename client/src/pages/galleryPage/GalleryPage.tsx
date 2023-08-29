@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./GalleryPage.css";
 import { galleryData } from "../../utils/dummyData";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 const GalleryPage = () => {
+  const showModalRef = useRef<HTMLDivElement | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -11,11 +12,6 @@ const GalleryPage = () => {
     setCurrentImageIndex(index);
     setModalOpen(true);
   };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? galleryData.length - 1 : prevIndex - 1
@@ -36,13 +32,42 @@ const GalleryPage = () => {
     }
   }, [modalOpen]);
 
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        showModalRef.current &&
+        !showModalRef.current.contains(e.target as Node)
+      ) {
+        setModalOpen(false);
+      }
+    };
+
+    const handleEscapeKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setModalOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscapeKey);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, []);
+
   return (
     <section className="galleryPage">
       <div className="galleryPage-hero">
         <h2>Gallery</h2>
       </div>
       <div className="container">
-        <div className="galleryPage__wrapper">
+        <div
+          className="galleryPage__wrapper"
+          data-aos="fade-up"
+          data-aos-duration="1100"
+        >
           <div className="galleryPage-bottom">
             {galleryData.map((galleryImg, index) => (
               <img
@@ -58,10 +83,7 @@ const GalleryPage = () => {
 
       {modalOpen && (
         <div className="modal">
-          <div className="modal-content">
-            <span className="modal-close" onClick={closeModal}>
-              &times;
-            </span>
+          <div className="modal-content" ref={showModalRef}>
             <div className="modal-image">
               <img
                 src={galleryData[currentImageIndex].img}

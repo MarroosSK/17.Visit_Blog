@@ -3,6 +3,7 @@ import App from "./App.tsx";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SearchContextProvider } from "./context/searchContext.tsx";
+import "aos/dist/aos.css";
 
 const queryClient = new QueryClient();
 
